@@ -1,0 +1,10 @@
+#search_div {
+    display: flex;
+    justify-content: center;
+}
+#input_div {
+    width: 200px;
+    height: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}

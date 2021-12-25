@@ -1,0 +1,62 @@
+<!-- public key => e96ee94b25b1e72b39b8ee6b24f980fc
+    private key => 991ae7f0a003470bb1c8a6350ce938222ad65c3e
+    hash => ts + private key + public key
+         => 1991ae7f0a003470bb1c8a6350ce938222ad65c3ee96ee94b25b1e72b39b8ee6b24f980fc
+    md5.cz => 8fe80a81916aa5742e86f22c6537f917
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./marvelSearch.css">
+
+<body>
+    <br />
+    <div id="search_div">
+        <input type="text" name="" id="input_div" placeholder="Enter Marvel Character Name">
+        <button onclick="fetchCharacter()">Find</button>
+    </div><br />
+    <hr /><br />
+    <div id="parent_div"></div>
+</body>
+
+</html>
+<script>
+    // step1 => fetch data
+    var fetchCharacter = async () => {
+        try {
+            var res = await fetch(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=e96ee94b25b1e72b39b8ee6b24f980fc&hash=8fe80a81916aa5742e86f22c6537f917`);
+            var data = await res.json();
+            console.log(data.data.results);
+            showCharacter(data.data.results);
+        }
+        catch (err) {
+            console.log('error', err);
+        }
+    }
+
+    // step2 => show data on browser
+    var showCharacter = (data) => {
+        if (data.Response == 'False') {
+            alert("movie not found");
+        }
+        else {
+            var parent = document.getElementById("parent_div");
+            for (var {name,thumbnail} of data) {
+                var div = document.createElement("div");
+                // var img = document.createElement("img");
+                // img.src = `${thumbnail.path}`;
+                var names = document.createElement("p");
+                names.innerHTML = name;
+                div.append(names);
+                parent.append(div);
+            }
+        }
+    }
+</script>
