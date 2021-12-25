@@ -1,0 +1,13 @@
+public key => e96ee94b25b1e72b39b8ee6b24f980fc
+    private key => 991ae7f0a003470bb1c8a6350ce938222ad65c3e
+    hash => ts + private key + public key
+         => 1991ae7f0a003470bb1c8a6350ce938222ad65c3ee96ee94b25b1e72b39b8ee6b24f980fc
+    md5.cz => 8fe80a81916aa5742e86f22c6537f917
+    
+**********************************************************************************************
+
+http://gateway.marvel.com/v1/public/characters?
+nameStartsWith=${take input value}
+&ts=1
+&apikey=public key
+&hash= go to site "md5.cz" and paste "ts + private key + public key"

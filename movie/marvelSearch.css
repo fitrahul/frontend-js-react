@@ -8,3 +8,8 @@
     border: 1px solid gray;
     border-radius: 5px;
 }
+#comics_div {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-gap: 5%;
+}

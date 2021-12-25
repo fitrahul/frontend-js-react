@@ -11,21 +11,17 @@
 
 <body>
     <br />
-    <div id="search_div">
-        <input type="text" name="" id="input_div" placeholder="Enter Marvel Character Name">
-        <button onclick="fetchCharacter()">Find</button>
-    </div><br />
-    <hr /><br />
-    <div id="parent_div"></div>
+    <h1 style="margin: auto; width: 350px;">Marvels Comics</h1><hr/>
+    <div id="comics_div"></div>
+    <div id="detail_div"></div>
 </body>
 
 </html>
 <script>
     // step1 => fetch data
     var fetchCharacter = async () => {
-        var nam = document.getElementById("input_div").value;
         try {
-            var res = await fetch(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${nam}&ts=1&apikey=e96ee94b25b1e72b39b8ee6b24f980fc&hash=8fe80a81916aa5742e86f22c6537f917`);
+            var res = await fetch(`http://gateway.marvel.com/v1/public/comics?ts=1&apikey=e96ee94b25b1e72b39b8ee6b24f980fc&hash=8fe80a81916aa5742e86f22c6537f917`);
             var data = await res.json();
             // console.log(data.data.results);
             showCharacter(data.data.results);
@@ -34,31 +30,49 @@
             console.log('error', err);
         }
     }
+    fetchCharacter()
 
     // step2 => show data on browser
+
+    // function func(e) {
+    //     window.location.href = e;
+    // }
+
     var showCharacter = (data) => {
         if (data.Response == 'False') {
             alert("movie not found");
         }
         else {
-            var parent = document.getElementById("parent_div");
-            parent.innerHTML = "";
-            for (var {name,thumbnail,id} of data) {
+            var parent = document.getElementById("comics_div");
+            for (var { title, thumbnail, urls, id } of data) {
+                console.log(urls[0].url);
+
                 var div = document.createElement("div");
-                div.style.width = "12%"
-                div.style.margin = "auto";
                 div.style.border = "5px solid gray";
                 div.style.borderRadius = "20px"
                 div.style.padding = "20px";
                 div.style.background = "#CFD8DC"
+                div.style.margin = "auto";
+
                 var img = document.createElement("img");
                 var sorce = thumbnail.path
-                img.src = `${sorce}/portrait_xlarge.jpg`
+                img.src = `${sorce}/portrait_xlarge.jpg`;
+                // img.addEventListener("click", () => {
+                //     func(urls[0].url);
+                // })
+
                 var names = document.createElement("p");
-                names.innerHTML = name;
-                div.append(img,names);
+                names.innerHTML = `title: ${title}`;
+
+                var a = document.createElement("a");
+                a.href = urls[0].url;
+                a.textContent = "Show Detail"
+                console.log(a);
+
+                div.append(img, names,a);
                 parent.append(div);
             }
         }
     }
+
 </script>
