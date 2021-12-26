@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ip1" oninput="throrts(main,3000)">
+</body>
+</html>
+<script>
+    // 2. main function
+    var count = 1;
+    var main = () => {
+        console.log(`fetching...${count++}`);
+    }
+
+    // 1. throtlling function
+    var flag = true;
+    function throrts (main,d) {   
+        if (flag) {
+            main();
+            flag = false;
+            setTimeout(()=>{
+                flag = true;
+            },d)
+        }
+    }
+</script>
