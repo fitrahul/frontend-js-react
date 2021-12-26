@@ -1,7 +1,6 @@
 #main_div {
     width: 17%;
     padding: 20px;
-    /* padding-left: 80px; */
     margin: auto;
     height: 60vh;
     background: #ECEFF1;
@@ -12,6 +11,7 @@
     background: #B0BEC5;
     padding: 20px;
     border-radius: 5px;
+    color: #4A148C;
 }
 
 .infinite {
@@ -21,4 +21,5 @@
     margin: auto;
     background: gray;
     border-radius: 30px;
+    color: #263238;
 }
