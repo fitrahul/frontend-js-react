@@ -1,0 +1,25 @@
+#main_div {
+    width: 17%;
+    padding: 20px;
+    margin: auto;
+    height: 60vh;
+    background: #ECEFF1;
+    overflow: scroll;
+}
+
+#child_div {
+    background: #B0BEC5;
+    padding: 20px;
+    border-radius: 5px;
+    color: #4A148C;
+}
+
+.infinite {
+    width: 20%;
+    padding: 20px;
+    padding-left: 50px;
+    margin: auto;
+    background: gray;
+    border-radius: 30px;
+    color: #263238;
+}
