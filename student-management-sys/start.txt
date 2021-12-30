@@ -1,0 +1,23 @@
+backend install process =>
+---------------
+
+npm init -y
+npm i express mongoose cors
+package.json => scripts => "server": "nodemon server.js"
+npm run server
+
+folder structure =>
+----------------
+
+node_module
+src => config => db.js
+    => controllers => user.controller.js
+    => models => user.model.js
+    =>server.js
+package.json
+
+<<<<<<<<<<====================================================>>>>>>>>>>>>
+<<<<<<<<<<====================================================>>>>>>>>>>>>
+
+frontend process =>
+----------------
