@@ -19,7 +19,7 @@ function App() {
           <Dashboard />
         </Route>
         <Route exact path="/admin">
-          <Student />
+          <Login />
         </Route>
         <Route exact path="/dsa">
           <Dsa />
