@@ -1,0 +1,27 @@
+.adminlogin_div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    background: #FAFAFA;
+    border-radius: 10px;
+    transform: translate(0, -3px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.form_login {
+    padding: 20px;
+}
+
+.adminlogin_div :hover{
+    background: #FFEBEE;
+}
+
+#mail, #pass {
+    width: 50%;
+    height: 25px;
+    background-color: #F3E5F5;
+    color: rgb(59, 3, 3);
+    border-radius: 5px;
+    padding: 5px;
+}

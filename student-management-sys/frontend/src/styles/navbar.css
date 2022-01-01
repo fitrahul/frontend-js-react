@@ -1,0 +1,25 @@
+.navbar_div {
+    display: flex;
+    justify-content: space-around;
+    background: #ECEFF1;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    width: 60%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.navbar_link {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #607D8B;
+}
+
+.navbar_link:hover{
+    background: #D7CCC8;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    box-shadow: #212121;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

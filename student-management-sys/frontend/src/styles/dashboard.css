@@ -1,0 +1,44 @@
+.dash_div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 80%;
+    margin: auto;
+    border: 3px solid rgb(197, 168, 4);
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgb(206, 221, 206);
+}
+
+.dash_div_1 {
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 20px; */
+    width: 80%;
+    margin: auto;
+    border: 1px solid rgb(250, 228, 101);
+    padding-left: 20px;
+    padding-right: 20px;
+    background: honeydew;
+    cursor: pointer;
+}
+
+.dash_sort_div {
+    display: flex;
+    justify-content: space-between;
+    background: honeydew;
+    width: 20%;
+    margin: auto;
+    padding: 10px;
+}
+
+.dash_sort_div Link {
+    width: 45%;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.dash_sort_div:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

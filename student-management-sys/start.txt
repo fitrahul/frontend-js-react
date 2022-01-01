@@ -21,3 +21,7 @@ package.json
 
 frontend process =>
 ----------------
+
+create-react-app foldername
+for Routing => npm i react-router-dom@5.3.0
+npm start
