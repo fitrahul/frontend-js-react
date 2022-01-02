@@ -9,6 +9,7 @@ import Contest from './components/Contest';
 import Student from './components/Student';
 import Dsa from './components/Dsa';
 import Coading from './components/Coading';
+import ContestList from './components/ContestList';
 
 function App() {
   return (
@@ -27,9 +28,20 @@ function App() {
         <Route exact path="/coading">
           <Coading />
         </Route>
-        <Route>404 Page not found</Route>
+        <Route exact path="/stu_form">
+          <Student />
+        </Route>
+        <Route exact path="/con_form">
+          <Contest />
+        </Route>
+        <Route exact path="/admin_link">
+          <Admin />
+        </Route>
+        <Route exact path="/contestlist">
+          <ContestList />
+        </Route>
+        <br /><Route>404 Page not found</Route>
       </Switch>
-      
     </div>
   );
 }

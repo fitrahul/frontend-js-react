@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import "../styles/dashboard.css"
-import DashSort from './DashSort';
+import Admin from './Admin';
 
-const Dashboard = () => {
+const ContestList = () => {
     const [dash, setDash] = useState([]);
     const [flag,setFlag] = useState(false);
-    // const [page,setPage] = useState(1);
 
     function gettingContest() {
         axios.get("http://localhost:4321/contest").then((res) => {
@@ -30,8 +29,8 @@ const Dashboard = () => {
     else {
         return (
             <>
+                <Admin />
                 <h2>Contests</h2>
-                <DashSort /><br/>
                 <div className='dash_div'>
                     <h3 style={{width:'20%'}}>TITLE</h3>
                     <h3 style={{width:'20%'}}>TYPE</h3>
@@ -49,11 +48,9 @@ const Dashboard = () => {
                     </div>
                 ))}
                 <br/>
-                {/* <button onClick={() => {setPage(page-1)}}>Prev</button>
-                <button onClick={() => {setPage(page+1)}}>Next</button> */}
             </>
         )
     }
 }
 
-export default Dashboard
+export default ContestList

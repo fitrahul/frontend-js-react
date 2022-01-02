@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import "../styles/adminlogin.css"
+import Admin from './Admin';
 
 const Student = () => {
     const [student, setStudent] = useState({
@@ -18,12 +20,15 @@ const Student = () => {
             ...student,
             [name]: value
         })
-        console.log("formdata", student);
+        // console.log("formdata", student);
     };
 
     const studentForm = (e) => {
         e.preventDefault();
-        console.log(student);
+        axios.post("http://localhost:4321/students",student).then((res) => {
+            console.log(res);
+        })
+        // console.log(student);
         setStudent({
             name: "",
             city: "",
@@ -36,9 +41,9 @@ const Student = () => {
 
     return (
         <>
-            <br />
+            <Admin /><br/>
             <div className='adminlogin_div'>
-                <h2 style={{ padding: "10px" }}>Create Student List</h2>
+                <h2 style={{ padding: "10px" }}>Add Student</h2>
                 <form className='form_login' onSubmit={studentForm}>
                     <input type="text" value={student.name} onChange={handleChange} name="name" id="mail" placeholder='Name' /><br /><br />
                     <input type="text" value={student.city} onChange={handleChange} name="city" id="mail" placeholder='City' /><br /><br />
@@ -46,9 +51,9 @@ const Student = () => {
                     <input type="text" value={student.education} onChange={handleChange} name="education" id="mail" placeholder='Education' /><br /><br />
                     <input type="text" value={student.gender} onChange={handleChange} name="gender" id="mail" placeholder='Gender' /><br /><br />
                     <input type="number" value={student.contact} onChange={handleChange} name="contact" id="mail" placeholder='Contact' /><br /><br />
-                    <input type="submit" onChange={handleChange} name="" value="save" id="" />
+                    <input type="submit" name="" value="Create" id="" />
                 </form>
-            </div>
+            </div><br/>
         </>
     )
 }
@@ -56,3 +61,4 @@ const Student = () => {
 export default Student
 
 // name, city, age, education, gender, contact
+
