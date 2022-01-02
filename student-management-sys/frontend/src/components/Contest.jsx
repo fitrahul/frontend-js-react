@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import "../styles/adminlogin.css";
 import Admin from './Admin';
 
@@ -11,6 +12,8 @@ const Contest = () => {
         tag: "",
         time: ""
     })
+
+    const history = useHistory();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -25,7 +28,8 @@ const Contest = () => {
     const contestform = (e) => {
         e.preventDefault();
         axios.post("http://localhost:4321/contest",contest).then((res) => {
-            console.log(res);
+            // console.log(res);
+            return history.push("/contestlist")
         })
         // console.log(contest);
         setContest({

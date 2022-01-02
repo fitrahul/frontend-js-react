@@ -1,0 +1,52 @@
+.student_list_main_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.student_list {
+    width: 85%;
+}
+
+.sort_student {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+    height: 200px;
+    color: #F9004D;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.stu_div_1 {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(250, 228, 101);
+    margin-left: 40px;
+    background: honeydew;
+    cursor: pointer;
+}
+
+.stu_div_2 {
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid rgb(250, 228, 101);
+    margin-left: 40px;
+    background: honeydew;
+    color: #F9004D;
+}
+
+.name_sort {
+    width: 80%;
+    margin: auto;
+    height: 30px;
+    /* color: #eb5282; */
+    color: rgb(93, 185, 2);
+    font-size: large;
+    text-decoration: none;
+}
+
+.sort_by {
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}

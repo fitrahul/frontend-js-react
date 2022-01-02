@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import "../styles/adminlogin.css"
 import Admin from './Admin';
 
@@ -12,6 +13,8 @@ const Student = () => {
         gender: "",
         contact: ""
     })
+
+    const history = useHistory();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -26,7 +29,7 @@ const Student = () => {
     const studentForm = (e) => {
         e.preventDefault();
         axios.post("http://localhost:4321/students",student).then((res) => {
-            console.log(res);
+            return history.push("/studentlist")
         })
         // console.log(student);
         setStudent({

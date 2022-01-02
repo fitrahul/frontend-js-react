@@ -6,7 +6,6 @@ import DashSort from './DashSort';
 const Dashboard = () => {
     const [dash, setDash] = useState([]);
     const [flag,setFlag] = useState(false);
-    // const [page,setPage] = useState(1);
 
     function gettingContest() {
         axios.get("http://localhost:4321/contest").then((res) => {
@@ -49,8 +48,6 @@ const Dashboard = () => {
                     </div>
                 ))}
                 <br/>
-                {/* <button onClick={() => {setPage(page-1)}}>Prev</button>
-                <button onClick={() => {setPage(page+1)}}>Next</button> */}
             </>
         )
     }

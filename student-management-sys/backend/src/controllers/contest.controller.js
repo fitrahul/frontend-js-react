@@ -8,16 +8,19 @@ router.post("", async (req,res) => {
     return res.status(201).send({contest});
 });
 
+// all contest
 router.get("", async (req,res) => {
     let contest = await Contest.find().lean().exec();
     return res.status(201).send({contest});
 });
 
+// dsa contest only
 router.get("/dsa", async (req,res) => {
     let contest = await Contest.find({"type" : "DSA"}).lean().exec();
     return res.status(201).send({contest});
 });
 
+// coading contest only
 router.get("/coading", async (req,res) => {
     let contest = await Contest.find({"type" : "Coading"}).lean().exec();
     return res.status(201).send({contest});

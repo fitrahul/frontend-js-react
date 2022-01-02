@@ -10,6 +10,7 @@ import Student from './components/Student';
 import Dsa from './components/Dsa';
 import Coading from './components/Coading';
 import ContestList from './components/ContestList';
+import StudentList from './components/StudentList';
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route exact path="/contestlist">
           <ContestList />
+        </Route>
+        <Route exact path="/studentlist">
+          <StudentList />
         </Route>
         <br /><Route>404 Page not found</Route>
       </Switch>
