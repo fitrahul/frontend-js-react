@@ -11,22 +11,24 @@ const Country = () => {
         setText(e.target.value);
     }
 
-    function main () {
-        // console.log(text);
-        // if (text.length >= 1) {
-        //     axios.get("http://localhost:3001/name").then((res) => {
-        //         var cll = res.data;
-        //         for (let i = 0; i < cll.length; i++) {
-        //             if (cll[i].country.includes(text)) {
-        //                 // console.log(cll[i].country);
-        //                 SetName([...name,cll[i]]);
-        //             }
-        //         }
-        //     });
-        //     console.log("name: ",name);
-        // }
-    }
 
+
+    function main() {
+        if (text.length >= 2) {
+            axios.get("http://localhost:3005/name").then((res) => {
+                var cll = res.data;
+                for (let i = 0; i < cll.length; i++) {
+                    if (cll[i].country.toLowerCase().includes(text) && !name.includes(cll[i].country.toLowerCase())) {
+                        console.log(cll[i].country);
+                        SetName([...name, cll[i].country.toLowerCase()]);
+                    }
+                }
+                // var data = res.data;
+                // console.log(name);
+            });
+            console.log("name: ", name);
+        }
+    }
 
     function throrts(main, d) {
         if (flag) {
@@ -38,28 +40,23 @@ const Country = () => {
         }
     }
 
-    // useEffect(() => {
-    //     console.log("text: ", text);
-    //     console.log("name: ", name);
-    // }, [text])
 
     return (
-        <div className='country_div'>
+        <>
+            <div className='country_div'>
             <input
                 type="text"
                 id='country_inp'
-                onInput={handleOnchange, throrts(main, 2000)}
-                placeholder='Enter country name' />
+                onInput={handleOnchange, throrts(main, 500)}
+                placeholder='Enter country name'
+            />
         </div>
+        {name.map((con) => (
+            <div>{con}</div>
+        ))}
+        </>
     )
 }
 
 export default Country
 
-
-// cll.forEach((obj) => {
-                //     if (obj.country.includes(text)) {
-                //         console.log(obj.country);
-                //         SetName([...name, obj]);
-                //     }
-                // })

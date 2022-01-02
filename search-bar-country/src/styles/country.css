@@ -12,3 +12,17 @@
     border-left: 0px;
     border-right: 0px;
 }
+
+.country_map {
+    width: 20%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid red;
+    background: gainsboro;
+}
+
+.country_map :hover{
+    background: goldenrod;
+}
