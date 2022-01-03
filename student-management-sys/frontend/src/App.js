@@ -11,6 +11,9 @@ import Dsa from './components/Dsa';
 import Coading from './components/Coading';
 import ContestList from './components/ContestList';
 import StudentList from './components/StudentList';
+import StudentAge from './components/StudentAge';
+import StudentName from './components/StudentName';
+import StudentPatch from './components/StudentPatch';
 
 function App() {
   return (
@@ -43,6 +46,15 @@ function App() {
         </Route>
         <Route exact path="/studentlist">
           <StudentList />
+        </Route>
+        <Route exact path="/studentage">
+          <StudentAge/>
+        </Route>
+        <Route exact path="/studentname">
+          <StudentName/>
+        </Route>
+        <Route exact path="/studentpatch">
+          <StudentPatch />
         </Route>
         <br /><Route>404 Page not found</Route>
       </Switch>

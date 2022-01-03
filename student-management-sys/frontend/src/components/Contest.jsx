@@ -13,8 +13,6 @@ const Contest = () => {
         time: ""
     })
 
-    const history = useHistory();
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         // console.log(name,type);
@@ -22,9 +20,10 @@ const Contest = () => {
             ...contest,
             [name]: value
         })
-        console.log("formdata", contest);
+        // console.log("formdata", contest);
     };
 
+    const history = useHistory();
     const contestform = (e) => {
         e.preventDefault();
         axios.post("http://localhost:4321/contest",contest).then((res) => {

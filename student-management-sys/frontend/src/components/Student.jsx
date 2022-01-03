@@ -14,8 +14,6 @@ const Student = () => {
         contact: ""
     })
 
-    const history = useHistory();
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         // console.log(name,type);
@@ -26,6 +24,7 @@ const Student = () => {
         // console.log("formdata", student);
     };
 
+    const history = useHistory();
     const studentForm = (e) => {
         e.preventDefault();
         axios.post("http://localhost:4321/students",student).then((res) => {

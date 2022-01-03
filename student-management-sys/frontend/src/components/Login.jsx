@@ -8,7 +8,6 @@ const Login = () => {
         username: "",
         password: ""
     })
-    const history = useHistory();
 
     const handleLogin = (e) => {
         const { name, value } = e.target;
@@ -19,6 +18,7 @@ const Login = () => {
         // console.log(login);
     }
 
+    const history = useHistory();
     const handleFormlogin = (e) => {
         e.preventDefault();
         axios.post("http://localhost:4321/admins/check", login).then((res) => {

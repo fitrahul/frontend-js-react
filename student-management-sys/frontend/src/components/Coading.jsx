@@ -11,37 +11,41 @@ const Coading = () => {
         axios.get("http://localhost:4321/contest/coading").then((res) => {
             const data = res.data.contest;
             setFlag(true);
-            console.log(data);
+            // console.log(data);
             setDash(data);
         })
     }, [])
 
     if (flag === false) {
         return (
-            <div></div>
+            <>
+                <br/>
+                <div>Loading...</div>
+            </>
         )
     }
     else {
         return (
             <>
                 <h2>Contests</h2>
-                <DashSort /><br/>
+                <DashSort /><br />
                 <div className='dash_div'>
-                    <h3 style={{width:'20%'}}>TITLE</h3>
-                    <h3 style={{width:'20%'}}>TYPE</h3>
-                    <h3 style={{width:'20%'}}>DEADLINE</h3>
-                    <h3 style={{width:'20%'}}>TAG</h3>
-                    <h3 style={{width:'20%'}}>TIME</h3>
+                    <h3 style={{ width: '20%' }}>TITLE</h3>
+                    <h3 style={{ width: '20%' }}>TYPE</h3>
+                    <h3 style={{ width: '20%' }}>DEADLINE</h3>
+                    <h3 style={{ width: '20%' }}>TAG</h3>
+                    <h3 style={{ width: '20%' }}>TIME</h3>
                 </div>
                 {dash.map((obj) => (
                     <div className='dash_div_1'>
-                        <p style={{width:'20%'}}>{obj.title}</p>
-                        <p style={{width:'20%'}}>{obj.type}</p>
-                        <p style={{width:'20%'}}>{obj.deadline}</p>
-                        <p style={{width:'20%'}}>{obj.tag}</p>
-                        <p style={{width:'20%'}}>{obj.time}</p>
+                        <p style={{ width: '20%' }}>{obj.title}</p>
+                        <p style={{ width: '20%' }}>{obj.type}</p>
+                        <p style={{ width: '20%' }}>{obj.deadline}</p>
+                        <p style={{ width: '20%' }}>{obj.tag}</p>
+                        <p style={{ width: '20%' }}>{obj.time}</p>
                     </div>
                 ))}
+                <br />
             </>
         )
     }

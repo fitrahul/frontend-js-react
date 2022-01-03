@@ -23,6 +23,25 @@ router.get("", async (req,res) => {
     }
 });
 
+// get by id =>
+
+router.get("/:id", async (req,res) => {
+    const user = await Student.findById(req.params.id).lean().exec();
+    return res.status(201).send({user});
+})
+
+// sort by name =>
+
+router.get("/age", async (req,res) => {
+    let user = await Student.find().sort({age:1}).lean().exec();
+    return res.status(201).send({user});
+});
+
+router.get("/name", async (req,res) => {
+    let user = await Student.find().sort({name:1}).lean().exec();
+    return res.status(201).send({user});
+});
+
 router.delete("/:id", async (req,res) => {
     const user = await Student.findByIdAndDelete(req.params.id).lean().exec();
     return res.status(201).send({user});

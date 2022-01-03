@@ -11,7 +11,7 @@ const Dsa = () => {
         axios.get("http://localhost:4321/contest/dsa").then((res) => {
             const data = res.data.contest;
             setFlag(true);
-            console.log(data);
+            // console.log(data);
             setDash(data);
         })
     }, [])
@@ -42,6 +42,7 @@ const Dsa = () => {
                         <p style={{width:'20%'}}>{obj.time}</p>
                     </div>
                 ))}
+                <br/>
             </>
         )
     }

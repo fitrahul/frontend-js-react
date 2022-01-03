@@ -12,7 +12,7 @@ const ContestList = () => {
             // console.log("res: ",res);
             const data = res.data.contest;
             setFlag(true);
-            console.log("data: ",data);
+            // console.log("data: ",data);
             setDash(data);
         })
     }
