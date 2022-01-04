@@ -32,12 +32,12 @@ router.get("/:id", async (req,res) => {
 
 // sort by name =>
 
-router.get("/age", async (req,res) => {
+router.get("/age/age", async (req,res) => {
     let user = await Student.find().sort({age:1}).lean().exec();
     return res.status(201).send({user});
 });
 
-router.get("/name", async (req,res) => {
+router.get("/name/name", async (req,res) => {
     let user = await Student.find().sort({name:1}).lean().exec();
     return res.status(201).send({user});
 });

@@ -10,8 +10,9 @@ const StudentName = () => {
     const [flag1, setFlag1] = useState(false);
 
     function gettingStudent() {
-        axios.get("http://localhost:4321/students/name").then((res) => {
-            // console.log("res: ",res);
+        console.log("get before");
+        axios.get("http://localhost:4321/students/name/name").then((res) => {
+            // console.log("res: ","get after");
             const data = res.data.user;
             // setFlag(true);
             // console.log("data: ", data);
@@ -20,20 +21,24 @@ const StudentName = () => {
     }
 
     const handleDelete = (ids) => {
-        console.log(ids);
+        // console.log(ids);
         axios.delete(`http://localhost:4321/students/${ids}`).then((res) => {
             // console.log("response: ",res);
+            setStu([]);
             setFlag1(true);
         })
     }
 
     useEffect(() => {
+        // console.log("hi");
         gettingStudent();
+        // console.log("hello");
     }, [flag1])
 
-    useEffect(() => {
-        gettingStudent();
-    }, [])
+
+    // useEffect(() => {
+    //     gettingStudent();
+    // }, [])
 
     if (stu === null) {
         return (
@@ -74,8 +79,12 @@ const StudentName = () => {
                                 <p style={{ width: '12.5%' }}>{obj.education}</p>
                                 <p style={{ width: '12.5%' }}>{obj.gender}</p>
                                 <p style={{ width: '12.5%' }}>{obj.contact}</p>
-                                <button style={{ width: '12.5%' }}>Edit</button>
-                                <button onClick={() => {handleDelete(obj._id)}} style={{ width: '12.5%' }}>Delete</button>
+                                <button style={{ width: '12.5%' }}><Link style={{ textDecoration: "none",color:"#000000" }} to={{
+                                    pathname: `/studentpatch`,
+                                    state: obj._id,
+                                }}
+                                >Edit</Link></button>
+                                <button onClick={() => { handleDelete(obj._id) }} style={{ width: '12.5%' }}>Delete</button>
                             </div>
                         ))}
                     </div>
@@ -85,7 +94,7 @@ const StudentName = () => {
                         <Link to="/studentage" className='name_sort'>Age</Link>
                     </div>
                 </div>
-                <br/>
+                <br />
             </>
         )
     }

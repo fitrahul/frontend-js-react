@@ -10,7 +10,7 @@ const StudentAge = () => {
     const [flag1, setFlag1] = useState(false);
 
     function gettingStudent() {
-        axios.get("http://localhost:4321/students/age").then((res) => {
+        axios.get("http://localhost:4321/students/age/age").then((res) => {
             // console.log("res: ",res);
             const data = res.data.user;
             // setFlag(true);
@@ -20,9 +20,9 @@ const StudentAge = () => {
     }
 
     const handleDelete = (ids) => {
-        console.log(ids);
+        // console.log(ids);
         axios.delete(`http://localhost:4321/students/${ids}`).then((res) => {
-            console.log("response: ",res);
+            console.log("response: ", res);
             setFlag1(true);
         })
     }
@@ -31,9 +31,9 @@ const StudentAge = () => {
         gettingStudent();
     }, [flag1])
 
-    useEffect(() => {
-        gettingStudent();
-    }, [])
+    // useEffect(() => {
+    //     gettingStudent();
+    // }, [])
 
     if (stu === null) {
         return (
@@ -74,8 +74,12 @@ const StudentAge = () => {
                                 <p style={{ width: '12.5%' }}>{obj.education}</p>
                                 <p style={{ width: '12.5%' }}>{obj.gender}</p>
                                 <p style={{ width: '12.5%' }}>{obj.contact}</p>
-                                <button style={{ width: '12.5%' }}>Edit</button>
-                                <button onClick={() => {handleDelete(obj._id)}} style={{ width: '12.5%' }}>Delete</button>
+                                <button style={{ width: '12.5%' }}><Link style={{ textDecoration: "none",color:"#000000" }} to={{
+                                    pathname: `/studentpatch`,
+                                    state: obj._id,
+                                }}
+                                >Edit</Link></button>
+                                <button onClick={() => { handleDelete(obj._id) }} style={{ width: '12.5%' }}>Delete</button>
                             </div>
                         ))}
                     </div>
@@ -85,7 +89,7 @@ const StudentAge = () => {
                         <Link to="/studentage" className='name_sort'>Age</Link>
                     </div>
                 </div>
-                <br/>
+                <br />
             </>
         )
     }

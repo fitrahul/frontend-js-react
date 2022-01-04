@@ -54,7 +54,7 @@ const StudentPatch = () => {
             {flag ? <div>
                 <Admin /><br />
                 <div className='adminlogin_div'>
-                    <h2 style={{ padding: "10px" }}>Add Student</h2>
+                    <h2 style={{ padding: "10px" }}>Update Student Data</h2>
                     <form className='form_login' onSubmit={studentForm}>
                         <input type="text" defaultValue={patchdata.name}  onChange={handleChange} name="name" id="mail" placeholder='Name' /><br /><br />
                         <input type="text" defaultValue={patchdata.city} onChange={handleChange} name="city" id="mail" placeholder='City' /><br /><br />
@@ -62,7 +62,7 @@ const StudentPatch = () => {
                         <input type="text" defaultValue={patchdata.education}  onChange={handleChange} name="education" id="mail" placeholder='Education' /><br /><br />
                         <input type="text" defaultValue={patchdata.gender}  onChange={handleChange} name="gender" id="mail" placeholder='Gender' /><br /><br />
                         <input type="number" defaultValue={patchdata.contact}  onChange={handleChange} name="contact" id="mail" placeholder='Contact' /><br /><br />
-                        <input type="submit" name="" value="Edit" id="" />
+                        <input type="submit" name="" value="Update" id="" />
                     </form>
                 </div><br />
             </div> : <div>Loading...</div>}
