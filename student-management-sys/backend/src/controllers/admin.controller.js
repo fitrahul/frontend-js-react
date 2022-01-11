@@ -17,7 +17,7 @@ router.get("", async (req, res) => {
 router.post("/check", async (req, res) => {
         var admin = await Admin.findOne({username: req.body.username}).lean().exec();
         var pas = await Admin.findOne({password: req.body.password}).lean().exec();
-        console.log(admin,pas);
+        // console.log(admin,pas);
         if (admin !== null && pas !== null) {
             return res.status(201).send({ admin });
         }
