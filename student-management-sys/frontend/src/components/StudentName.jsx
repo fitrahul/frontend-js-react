@@ -84,7 +84,7 @@ const StudentName = () => {
                                     state: obj._id,
                                 }}
                                 >Edit</Link></button>
-                                <button onClick={() => { handleDelete(obj._id) }} style={{ width: '12.5%' }}>Delete</button>
+                                <button onClick={() => { handleDelete(obj._id) }} style={{ width: '12.5%',cursor: "pointer" }}>Delete</button>
                             </div>
                         ))}
                     </div>
